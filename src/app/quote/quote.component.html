@@ -1,5 +1,39 @@
-<h1>Quotes</h1>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Quotes!</title>    
+</head>
+<body>
+
+    <div class="jumbotron">
+                    <h1 class="display-4">Quotes!</h1>
+                    <p class="lead">This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.</p>
+                    <!-- <hr class="my-4"> -->
+                    </div>
+<!-- <h1>Quotes</h1> -->
 <ul>
-    <li *ngFor='let quote of quotes'>{{quote.quoteBody}}</li>   
+    <div *ngFor='let quote of quotes'>{{quote.quoteBody}}
+        
+        <div>
+                <button class="btn btn-success" > UpVote</button>
+                <button class="btn btn-primary" >DownVote</button>
+        </div>
+        <br>
+        <div>
+            <button (click) ='quoteDelete(true)'class="btn btn-danger">Delete Quote</button>
+        </div>
+       
+        <hr>
+    </div>   
 </ul>
-<!-- <p *ngIf='goals.length > 5'>You have too many goals</p> -->
+<div>
+<p class="quoteNumber"*ngIf='quotes.length <= 0'>You Stilll have no quotes.Please add quotes and add votes.</p>
+</div>
+
+</body>

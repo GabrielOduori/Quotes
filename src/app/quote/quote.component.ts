@@ -9,10 +9,10 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes = [
-    new Quote(1,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Gabriel', 'Oduori', new Date(2016,3,14)),
-    new Quote(2,'Another great quote', 'Mike', 'Otani', new Date(2017,12,14)),
-    new Quote(3,'One more big quote', 'Abiero', 'Mgele', new Date(2017,3,24)),
-    new Quote(4,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Kenya', 'Nairobi', new Date(2015,10,20)),
+    // new Quote(1,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Gabriel', 'Oduori', new Date(2016,3,14)),
+    // new Quote(2,'Another great quote', 'Mike', 'Otani', new Date(2017,12,14)),
+    // new Quote(3,'One more big quote', 'Abiero', 'Mgele', new Date(2017,3,24)),
+    // new Quote(4,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Kenya', 'Nairobi', new Date(2015,10,20)),
 
 
   ]
@@ -38,10 +38,11 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].showDetails =!this.quotes[index].showDetails;
   }
 
-  completeQuote(isComplete,index){
-    if(isComplete){
-      this.quotes.splice(index,1)
-    }
+  addNewQuote(quote){
+    let quoteLength = this.quotes.length;
+    quote.id  = quoteLength+1;
+    quote.creationDate = new Date(quote.creationDate);
+    this.quotes.push(quote)
   }
   constructor() { }
 

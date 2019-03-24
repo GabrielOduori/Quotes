@@ -15,30 +15,24 @@
 
                     <h1 class="display-4">Quotes!</h1>
                     <p class="lead">This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.</p>
-                    <!-- <hr class="my-4"> -->
     </div>
 <!-- <h1>Quotes</h1> -->
+<div class="container">
+    <div class="row">
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+</div>
 <ul>
     <div *ngFor='let quote of quotes; let i = index'>
-        <li>{{quote.quoteBody}} published on {{quote.creationDate|date}}</li>
+        <div>{{quote.quoteBody}} published on {{quote.creationDate|date}}</div>
         <button class="btn btn-info btn-sm"(click) ='toggleDetails(i)'>Show Details</button>
         <app-quote-details *ngIf="quote.showDetails" [quote]='quote' (isComplete) ='deleteQuote($event, i)'></app-quote-details>
-      
-       
-        <!-- <div>
-                <button class="btn btn-success" > UpVote</button>
-                <button class="btn btn-primary" >DownVote</button>
-        </div>
-        <br>
-        <div>
-            <button (click) ='quoteDelete(true)'class="btn btn-danger">Delete Quote</button>
-        </div>
-        -->
+<app-vote></app-vote>
         <hr>
     </div>   
 </ul>
 <div>
-<p class="quoteNumber"*ngIf='quotes.length <= 0'>You Stilll have no quotes.Please add quotes and add votes.</p>
+<p class="quoteNumber"*ngIf='quotes.length <= 0' >You Stilll have no quotes.Please add quotes and add votes.</p>
 </div>
 
 </body>

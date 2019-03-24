@@ -9,10 +9,10 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes = [
-    // new Quote(1,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.'),
-    // new Quote(2,'Another great quote'),
-    // new Quote(3,'One more big quote'),
-    // new Quote(4,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.'),
+    new Quote(1,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Gabriel', 'Oduori', new Date(2018,3,14)),
+    new Quote(2,'Another great quote', 'Mike', 'Otani', new Date(2017,12,14)),
+    new Quote(3,'One more big quote', 'Abiero', 'Mgele', new Date(2018,3,24)),
+    new Quote(4,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Kenya', 'Nairobi', new Date(2018,10,20)),
 
 
   ]
@@ -31,6 +31,16 @@ export class QuoteComponent implements OnInit {
         this.quotes.splice(index,1)
       }
 
+    }
+  }
+
+  toggleDetails(index){
+    this.quotes[index].showDetails =!this.quotes[index].showDetails;
+  }
+
+  completeQuote(isComplete,index){
+    if(isComplete){
+      this.quotes.splice(index,1)
     }
   }
   constructor() { }

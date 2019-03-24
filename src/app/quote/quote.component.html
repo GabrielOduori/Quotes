@@ -18,9 +18,13 @@
                     </div>
 <!-- <h1>Quotes</h1> -->
 <ul>
-    <div *ngFor='let quote of quotes'>{{quote.quoteBody}}
-        
-        <div>
+    <div *ngFor='let quote of quotes; let i = index'>
+        <li>{{quote.author}}</li>
+        <button (click) ='toggleDetails(i)'>Toggle Details</button>
+        <app-quote-details *ngIf="quote.showDetails" [quote]='quote' (isComplete) ='completeQuote($event, i)'></app-quote-details>
+      
+       
+        <!-- <div>
                 <button class="btn btn-success" > UpVote</button>
                 <button class="btn btn-primary" >DownVote</button>
         </div>
@@ -28,7 +32,7 @@
         <div>
             <button (click) ='quoteDelete(true)'class="btn btn-danger">Delete Quote</button>
         </div>
-       
+        -->
         <hr>
     </div>   
 </ul>

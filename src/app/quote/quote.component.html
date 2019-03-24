@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 
     <title>Quotes!</title>    
 </head>
 <body>
 
     <div class="jumbotron">
+
                     <h1 class="display-4">Quotes!</h1>
                     <p class="lead">This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.</p>
                     <!-- <hr class="my-4"> -->
-                    </div>
+    </div>
 <!-- <h1>Quotes</h1> -->
 <ul>
     <div *ngFor='let quote of quotes; let i = index'>
-        <li>{{quote.author}}</li>
-        <button (click) ='toggleDetails(i)'>Toggle Details</button>
-        <app-quote-details *ngIf="quote.showDetails" [quote]='quote' (isComplete) ='completeQuote($event, i)'></app-quote-details>
+        <li>{{quote.quoteBody}} published on {{quote.creationDate|date}}</li>
+        <button class="btn btn-info btn-sm"(click) ='toggleDetails(i)'>Show Details</button>
+        <app-quote-details *ngIf="quote.showDetails" [quote]='quote' (isComplete) ='deleteQuote($event, i)'></app-quote-details>
       
        
         <!-- <div>

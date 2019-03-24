@@ -1,4 +1,7 @@
 <p>
-{{quote.quoteBody}}
-<button (click) ='diaryComplete(true)'>Complete</button>
+{{quote.author}}
+</p>
+<p>This quote was published {{quote.creationDate|quoteDate}} days ago.</p>
+<p>
+<button class="btn btn-danger btn-sm" (click) ='quoteComplete(true)'>Delete entry</button>
 </p>

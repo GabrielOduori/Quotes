@@ -9,10 +9,10 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes = [
-    new Quote(1,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Gabriel', 'Oduori', new Date(2018,3,14)),
+    new Quote(1,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Gabriel', 'Oduori', new Date(2016,3,14)),
     new Quote(2,'Another great quote', 'Mike', 'Otani', new Date(2017,12,14)),
-    new Quote(3,'One more big quote', 'Abiero', 'Mgele', new Date(2018,3,24)),
-    new Quote(4,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Kenya', 'Nairobi', new Date(2018,10,20)),
+    new Quote(3,'One more big quote', 'Abiero', 'Mgele', new Date(2017,3,24)),
+    new Quote(4,'This application allows users to add in their favourite quote and let people upvote or down-vote. The Quote with the hightsts upvotes stays at the top.', 'Kenya', 'Nairobi', new Date(2015,10,20)),
 
 
   ]
@@ -25,7 +25,7 @@ export class QuoteComponent implements OnInit {
 
   deleteQuote(isComplete,index){
     if(isComplete){
-      let toDelete=confirm(`Are you sure you want to delete ${this.quotes[index].quoteBody}`)
+      let toDelete=confirm(`Are you sure you want to delete: ${this.quotes[index].quoteBody}`)
 
       if(toDelete){
         this.quotes.splice(index,1)

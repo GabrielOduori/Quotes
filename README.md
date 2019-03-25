@@ -11,7 +11,7 @@ Gabriel ODUORI
 Steps:
 1. Clone the reposiroty
 2. Run npm install. This will look through the package.json and install all required modules.
-3. Run ng serve -o. This will open up the application on a browser.
+3. Run ng serve -o. This will open up the application on a browser using the defaukt port(4200)
 
 ## License
 

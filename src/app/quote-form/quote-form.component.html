@@ -6,7 +6,9 @@
             <div class="form-group">
                 <label for="quoteBody">Quote</label>
                 <textarea class="form-control" id="quoteBody" rows="4" [(ngModel)]="newQuote.quoteBody" name="quoteBody" #quoteBody="ngModel" required></textarea>
-                <div [hidden]="quoteBody.valid || quoteBody.pristine" class="alert alert-danger">
+                <!-- <div [hidden]="quoteBody.valid || quoteBody.pristine" class="alert alert-danger"> -->
+                    <div *ngIf="quoteBody.invalid && (quoteBody.dirty||quoteBody.touched)" class="alert alert-danger">
+
                     <p> Please write a quote.</p>
                 </div>
             </div>

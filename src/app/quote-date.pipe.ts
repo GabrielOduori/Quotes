@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Quote} from "./quote";
 
 @Pipe({
   name: 'quoteDate'

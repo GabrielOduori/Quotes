@@ -9,9 +9,10 @@ Gabriel ODUORI
 
 ## Installation
 Steps:
-1. Clone the reposiroty
-2. Run npm install. This will look through the package.json and install all required modules.
-3. Run ng serve -o. This will open up the application on a browser using the defaukt port(4200)
+1. Clone the repository
+2. Install Angular CLI by running npm install -g @angular/cli
+2. cd into the cloned repository and run npm install. This will look through the package.json and install all required modules.
+3. Run ng serve -o. This will open up the application on a browser using the default port(4200)
 
 ## License
 
